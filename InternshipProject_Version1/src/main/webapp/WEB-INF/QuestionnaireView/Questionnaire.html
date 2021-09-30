@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>アンケート回答画面</title>
+<!-- 以下３行を削除 -->
+<link rel="stylesheet" href="../CSS/index.css" media="screen">
+<script src="../QuestionnaireLogic/QuestionnaireLogicAjaxPost.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>アンケート回答フォーム</h1>
+<div class="container">
+<fieldset>
+
+<!-- Form Name -->
+<legend>アンケート項目</legend>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">質問１：あなたの性別を教えてください。</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  id="sex" placeholder="Question 1: Please tell us your gender." type="text" style="width: 500px; height: 20px;">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >質問２：あなたの年齢を教えてください。</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input id="age" placeholder="Question 2: Please tell me your age." type="text" style="width: 500px; height: 20px;">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">質問３：あなたの登録ユーザー名を教えてください。</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input id="username" placeholder="Question 3: Please tell me your registered user name." type="text" style="width: 500px; height: 20px;">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+       
+<div class="form-group">
+  <label class="col-md-4 control-label">質問４：あなたの在籍している大学名を教えてください。</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input id="Question1" placeholder="Question 4: Please tell me the name of the university you are enrolled in." type="text" style="width: 500px; height: 20px;">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+      
+<div class="form-group">
+  <label class="col-md-4 control-label">質問５：あなたの所属学部・学科名を教えてください。</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input id="Question2" placeholder="Question 5: Please tell me the name of your faculty / department." type="text" style="width: 500px; height: 20px;">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label">質問６：あなたの出身地を教えてください。</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input id="Question3" placeholder="Question 6: Please tell us your hometown." type="text" style="width: 500px; height: 20px;">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">質問７：将来なりたい職種を教えてください。</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input id="Question4" placeholder="Question 7: What kind of job do you want to be in the future?" type="text" style="width: 500px; height: 20px;">
+    </div>
+</div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label">質問８：現在の趣味を教えてください。</label>  
+   <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+  <input id="Question5" placeholder="Question 8: What are your current hobbies?" type="text" style="width: 500px; height: 20px;">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">質問9：最後に自己紹介を入力してください。</label>  
+   <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+  <input id="Question6" placeholder="Question 9: Please enter your self-introduction at the end." class="form-control" type="text" style="width: 500px; height: 20px;">
+    </div>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" id="send">Send</button>
+  </div>
+</div>
+
+</fieldset>
+</div>
+    </div><!-- /.container -->
+</body>
+</html>
