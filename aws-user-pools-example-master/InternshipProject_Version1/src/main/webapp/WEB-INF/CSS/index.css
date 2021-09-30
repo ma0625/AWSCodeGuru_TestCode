@@ -1,0 +1,27 @@
+.mainDiv {
+    display: flex;
+    width: 100vw;
+    padding-top: 50px;
+    justify-content: center;
+}
+
+.content {
+    border-radius: 7px;
+    text-align: center;
+}
+
+.form-group {
+    width: 200vw;
+    padding-top: 50px;
+}
+
+h1 {
+	text-align: center;
+}
+fieldset {
+	background-color: #EEEEEE;
+}
+
+#success_message { 
+	display: none;
+}
