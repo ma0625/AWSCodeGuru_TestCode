@@ -32,7 +32,6 @@ public class AWSCognitoUserSignupMain {
         //AmazonSNS sns = new AmazonSNSClient();
         Regions regions = base.getRegions(TOKYO_REGION_NAME);
         AmazonSNS sns = AmazonSNSClient.builder().build();
-        sns.setRegion(Region.getRegion(regions));
 
         System.out.println("ユーザーを作成します...");
 
@@ -51,7 +50,7 @@ public class AWSCognitoUserSignupMain {
 
         signUpRequest.setUserAttributes(attributeDataTypes);
 
-        SignUpResult result = client.signUp(signUpRequest);
+        SignUpResult result = ((AWSCognitoIdentityProviderClient) sns).signUp(signUpRequest);
         if (result != null) {
 
             System.out.println("ユーザーが作成されました。");
@@ -63,7 +62,7 @@ public class AWSCognitoUserSignupMain {
 
         System.out.println("追加したユーザーを取得します");
 
-        AdminGetUserResult adminGetUserResult = client.adminGetUser(
+        AdminGetUserResult adminGetUserResult = ((AWSCognitoIdentityProviderClient) sns).adminGetUser(
                 new AdminGetUserRequest().withUserPoolId(USER_POOL_ID)
                                          .withUsername(USER_NAME_ID));
 
