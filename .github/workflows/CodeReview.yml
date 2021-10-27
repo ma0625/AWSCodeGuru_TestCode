@@ -22,39 +22,27 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-
+      # Step 1: Checkout the repository and provide your AWS credentials
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0   # Required
-          
+          fetch-depth: 0
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
-        if: ${{ always() }} # This ensures that your workflow runs successfully
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-northeast-1
-          
-      - name: AWS CodeGuru Reviewer
+          aws-region: ap-northeast-1  # Region to access CodeGuru 
+
+      # Step 2: Add CodeGuru Reviewer Action
+      - name: CodeGuru Reviewer
         uses: aws-actions/codeguru-reviewer@v1.1
-        if: ${{ always() }} 
         with:
           build_path: target # build artifact(s) directory
           s3_bucket: codeguru-reviewer-solpac  # S3 Bucket with "codeguru-reviewer-*" prefix
-      
+ 
+      # Step 3: Upload results into GitHub
       - name: Upload review result
         if: ${{ github.event_name != 'push' }}
         uses: github/codeql-action/upload-sarif@v1
