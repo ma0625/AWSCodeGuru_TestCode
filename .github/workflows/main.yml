@@ -22,8 +22,8 @@ jobs:
         java-version: 1.8
 
     - name: Build with Maven
-      run: mvn install
-      
+      run: mvn -B package --file pom.xml
+
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
